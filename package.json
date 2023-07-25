@@ -1,4 +1,5 @@
 {
+  "homepage": "http://mhboolor.github.io/find-git-user",
   "name": "find-git-user",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +16,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy" : "npm run biuld",
+    "deploy" : "gh-pages -d biuld",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -38,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "tailwindcss": "^3.3.3"
   }
 }
