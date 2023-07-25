@@ -18,7 +18,7 @@ function SearchUser() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div>
+      <div className="flex items-center justify-center">
         <p>کاربری را جستجو کنید</p>
       </div>
     </div>
