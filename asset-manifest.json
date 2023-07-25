@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/find-git-user/static/css/main.9b565e35.css",
+    "main.js": "/find-git-user/static/js/main.c710ec47.js",
+    "index.html": "/find-git-user/index.html",
+    "main.9b565e35.css.map": "/find-git-user/static/css/main.9b565e35.css.map",
+    "main.c710ec47.js.map": "/find-git-user/static/js/main.c710ec47.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b565e35.css",
+    "static/js/main.c710ec47.js"
+  ]
+}
