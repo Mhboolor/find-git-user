@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams , Link} from "react-router-dom";
+import Loading from "../Loading"
 
 function User() {
   const [data, setData] = useState();
@@ -62,7 +63,7 @@ function User() {
       </div>
     </div>
   ) : (
-    <p>loading ...</p>
+    <Loading/>
   )
 }
 export default User;

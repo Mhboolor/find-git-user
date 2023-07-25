@@ -1,15 +1,24 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SearchUser() {
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState('');
+  const navigate = useNavigate()
+
+  const searchHandler = () => {
+    if(search.length >= 3){
+      navigate(`/${search}`)
+    }else{
+      return
+    }
+  }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-5">
       <div className="flex items-center justify-center gap-4">
-        <Link className=" bg-green-400 px-2 py-1 rounded-md font-medium" to={`/${search}`}>
+        <button className=" bg-green-400 px-2 py-1 rounded-md font-medium" onClick={searchHandler}>
           جستجو
-        </Link>
+        </button>
         <input
           type="text"
           placeholder="جستجوی کاربر ..."
@@ -19,7 +28,7 @@ function SearchUser() {
         />
       </div>
       <div className="flex items-center justify-center">
-        <p>کاربری را جستجو کنید</p>
+        <p className="text-lg">کاربری را جستجو کنید</p>
       </div>
     </div>
   );
