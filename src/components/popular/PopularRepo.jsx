@@ -121,7 +121,7 @@ function PopularRepo() {
                     <tr className="text-center" key={item.id}>
                       <td className="p-2 border ">{item.name}</td>
                       <td className="p-2 border ">
-                        <Link>{item.svn_url}</Link>
+                        <Link to={item.svn_url}>{item.svn_url}</Link>
                       </td>
                       <td className="p-2 border ">{item.stargazers_count}</td>
                       <td className="p-2 border ">{item.forks}</td>
