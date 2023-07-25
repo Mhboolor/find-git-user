@@ -11,6 +11,7 @@ function User() {
   const { user } = useParams();
 
   useEffect(() => {
+    // Use Fetch For Get Api
     // const fetchUser = async () => {
     //   const response = await fetch(`https://api.github.com/users/${user}`);
     //   const data = await response.json();
@@ -24,6 +25,7 @@ function User() {
     // fetchUser();
     // fetchRepo();
 
+    // Use Axios For Get Api
     const fetchData = async () => {
       try {
         const { data: getData } = await axios.get(
@@ -35,9 +37,10 @@ function User() {
 
         setData(getData);
         setRepo(getRepo);
+        setLoading(false);
       } catch (err) {
-        if(err.status !== 200){
-          setErroe(err.message)
+        if (err.status !== 200) {
+          setErroe(err.message);
         }
       }
     };
@@ -45,9 +48,9 @@ function User() {
   }, []);
 
   return error ? (
-    <p>{error}</p>
+    <p className="text-center text-lg font-semibold text-red-500">این نام کاربری وجود ندارد !!!</p>
   ) : loading ? (
-    <Loading/>
+    <Loading />
   ) : data ? (
     <div className="flex flex-col gap-5">
       <div className="flex items-center justify-center">
@@ -80,7 +83,7 @@ function User() {
             </tr>
           </thead>
           <tbody>
-            {repo.length ?
+            {repo.length ? (
               repo.map((item) => (
                 <tr className="text-center" key={item.id}>
                   <td className="border border-slate-300 py-2">{item.name}</td>
@@ -88,17 +91,16 @@ function User() {
                     <Link to={item.svn_url}>{item.svn_url}</Link>
                   </td>
                 </tr>
-              )) : (
-                <tr>
-                  <td>ریپازیتوری موجود نمیباشد</td>
-                </tr>
-              )}
+              ))
+            ) : (
+              <tr>
+                <td>ریپازیتوری موجود نمیباشد</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
     </div>
-  ) : (
-    <p>این نام کاربری وجود ندارد !!!</p>
-  );
+  ) : null;
 }
 export default User;
