@@ -48,7 +48,9 @@ function User() {
   }, []);
 
   return error ? (
-    <p className="text-center text-lg font-semibold text-red-500">این نام کاربری وجود ندارد !!!</p>
+    <p className="text-center text-lg font-semibold text-red-500">
+      این نام کاربری وجود ندارد !!!
+    </p>
   ) : loading ? (
     <Loading />
   ) : data ? (
@@ -82,22 +84,24 @@ function User() {
               <th className="border border-slate-300 py-2">آدرس</th>
             </tr>
           </thead>
-          <tbody>
-            {repo.length ? (
-              repo.map((item) => (
+          {repo.length ? (
+            <tbody>
+              {repo.map((item) => (
                 <tr className="text-center" key={item.id}>
                   <td className="border border-slate-300 py-2">{item.name}</td>
                   <td className="border border-slate-300 py-2">
                     <Link to={item.svn_url}>{item.svn_url}</Link>
                   </td>
                 </tr>
-              ))
-            ) : (
+              ))}
+            </tbody>
+          ) : (
+            <tbody>
               <tr>
-                <td>ریپازیتوری موجود نمیباشد</td>
+                <td className="text-red-500 text-center py-2" colSpan={2}>- این کاربر ریپازیتوری برای نمایش ندارد -</td>
               </tr>
-            )}
-          </tbody>
+            </tbody>
+          )}
         </table>
       </div>
     </div>
