@@ -11,21 +11,6 @@ function User() {
   const { user } = useParams();
 
   useEffect(() => {
-    // Use Fetch For Get Api
-    // const fetchUser = async () => {
-    //   const response = await fetch(`https://api.github.com/users/${user}`);
-    //   const data = await response.json();
-    //   return setData(data);
-    // };
-    // const fetchRepo = async () => {
-    //   const response = await fetch(`https://api.github.com/users/${user}/repos`);
-    //   const data = await response.json();
-    //   return setRepo(data);
-    // };
-    // fetchUser();
-    // fetchRepo();
-
-    // Use Axios For Get Api
     const fetchData = async () => {
       try {
         const { data: getData } = await axios.get(
